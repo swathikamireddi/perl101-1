@@ -25,7 +25,7 @@ $SAMPLE_HASH_KEY_ARRAY{'Days'} = ['30', '29' , '28', '27', '26'];
 
 my @sample_keys_array = keys %SAMPLE_HASH_KEY_ARRAY;
 for my $each_key (@sample_keys_array) {
-    my @value_array = $SAMPLE_HASH_KEY_ARRAY{$each_key};
+    my @value_array = @{ $SAMPLE_HASH_KEY_ARRAY{$each_key} };
     my $size_value_array = scalar @value_array;
     print "Size - $size_value_array\n";
     if( $size_value_array > 0) {
