@@ -20,7 +20,7 @@ my %SAMPLE_HASH_KEY_ARRAY = ();
 
 $SAMPLE_HASH_KEY_ARRAY{'Year'} = ['2019', '2018'];
 $SAMPLE_HASH_KEY_ARRAY{'Month'} = ['12', '11', '10', '9'];
-$SAMPLE_HASH_KEY_ARRAY{'Days'} = ['30', '29' , '28', '27', '26'];
+$SAMPLE_HASH_KEY_ARRAY{'Days'} = ['30', '29' , '28', '27', '26'];#
 
 
 my @sample_keys_array = keys %SAMPLE_HASH_KEY_ARRAY;
@@ -33,5 +33,25 @@ for my $each_key (@sample_keys_array) {
             print "$each_value_a \n";
         }
     }
-    
 }
+
+
+# Sample hash of hash
+
+my %DEPARTMENT = ();
+$DEPARTMENT{'Name'} = 'Electronics';
+$DEPARTMENT{'Id'} = '1';
+
+my %STUDENT = ();
+$STUDENT{'Name'} = 'CBN';
+$STUDENT{'Department'} = \%DEPARTMENT;
+
+my $name = $STUDENT{'Name'};
+my %department = %{ $STUDENT{'Department'} };
+print "Student Name - $name \n";
+my @department_keys = keys %DEPARTMENT;
+for my $department_key (@department_keys) {
+    my $department_name = $DEPARTMENT{$department_key};
+    print "Department $department_key - $department_name \n";
+}
+
