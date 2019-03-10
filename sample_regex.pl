@@ -2,10 +2,8 @@
 
 use strict;
 
-my $my_str = 'Options allow-from="www.google.com|  msb.waf.wer.net |www.bc.com|msb.waf.wer.net|msb.test.king.net|tmb.test.king.net.extra",  command="ls -ltr"';
+my $my_str = 'Options allow-from="www.google.com|sb.waf.wer.net|www.bc.com|msb.waf.wer.net|msb.test.king.net|tmb.test.king.net.extra",  command="ls -ltr"';
 my $match_str = '';
-
-# m/\s*allow-from\s*={1}\s*(['\"]).+?\1/
 
 if ( $my_str =~ m/\s*allow-from\s*={1}\s*(["]).+?\1/ ) {
     print "Before Match - $` \n";
